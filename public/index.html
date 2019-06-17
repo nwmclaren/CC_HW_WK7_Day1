@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" href="./css/styles.css">
+	<script src="./js/bundle.js"></script>
+</head>
+<body>
+	<div id="app">
+    <!-- <ul> -->
+      <li v-for="(todo,index) in todos" :class="todo.priority ? 'priority':'notPriority'">
+        <span>{{ todo.task }}</span>
+        <span v-if="todo.priority">High Priority!</span>
+        <button v-if="!todo.priority" v-on:click="makePriority(index)">Make Priority</button>
+      </li>
+    <!-- </ul> -->
+    <input type="text" v-model="newToDo"/>
+    <button v-on:click="saveNewToDo">Save New ToDo</button>
+	</div>
+</body>
+</html>
